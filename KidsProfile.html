@@ -16,19 +16,9 @@
       transition: background-color 0.5s, color 0.5s;
     }
 
-    /* الوضع النهاري */
-    .day-mode {
-      background-color: #fffbea;
-      color: #333;
-    }
+    .day-mode { background-color: #fffbea; color: #333; }
+    .night-mode { background-color: #1e1e2f; color: #f0f0f0; }
 
-    /* الوضع الليلي */
-    .night-mode {
-      background-color: #1e1e2f;
-      color: #f0f0f0;
-    }
-
-    /* الهيدر */
     header {
       background: #ffc0cb;
       padding: 10px;
@@ -51,69 +41,31 @@
       text-decoration: none;
     }
 
-    header a:hover {
-      color: #ff69b4;
-    }
-
-    .toggle-btn {
-      background: transparent;
-      border: none;
-      cursor: pointer;
-    }
-
+    header a:hover { color: #ff69b4; }
+    .toggle-btn { background: transparent; border: none; cursor: pointer; }
     .toggle-btn img {
       width: 26px;
       height: 26px;
       transition: transform 0.3s;
     }
-
-    .toggle-btn:hover img {
-      transform: rotate(15deg);
-    }
+    .toggle-btn:hover img { transform: rotate(15deg); }
 
     section {
-      padding: 100px 20px 60px;
+      padding: 100px 0 60px;
     }
 
-    #home {
-      position: relative;
-      text-align: center;
-    }
-
-    #home img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 5px solid #ff69b4;
-    }
-
-    .star {
-      position: absolute;
-      color: rgb(255, 234, 117);
-      font-size: 1.5rem;
-    }
-
-    .star1 { top: 30%; left: 57%; }
-    .star2 { top: 40%; left: 40%; }
-    .star3 { top: 55%; left: 56%; }
-
-    h2 {
-      color: #ff69b4;
-    }
-
-    /* صندوق المحتوى */
     .content-box {
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 20px;
+      width: 100%;
+      margin: 0;
+      padding: 40px 20px;
       background-color: rgba(255, 255, 255, 0.85);
-      border: 2px solid #ff69b4;
-      border-radius: 12px;
+      border-top: 2px solid #ff69b4;
+      border-bottom: 2px solid #ff69b4;
       text-align: center;
       transition: background-color 0.5s;
+      box-sizing: border-box;
     }
 
-    /* محتوى ليلي */
     .night-mode .content-box {
       background-color: rgba(0, 0, 0, 0.4);
       border-color: #ccc;
@@ -126,32 +78,62 @@
       color: #fff;
     }
 
-    .night-mode footer {
-      background: #333;
-      color: #eee;
+    .night-mode footer { background: #333; color: #eee; }
+    .night-mode h2 { color: #ffd6f5; }
+    .night-mode header { background: #444; }
+    .night-mode header a:hover { color: #ffb3d1; }
+
+    hr {
+      border: none;
+      border-top: 2px dashed #ff69b4;
+      margin: 0 auto 40px;
+      width: 60%;
     }
 
-    .night-mode h2 {
-      color: #ffd6f5;
+    button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ffc0cb;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
     }
 
-    .night-mode header {
-      background: #444;
+    button:hover {
+      background-color: #ff69b4;
     }
 
-    .night-mode header a:hover {
-      color: #ffb3d1;
+    .card-container {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      text-align: right;
+    }
+
+    .card-container input[type="text"] {
+      font-size: 1.2rem;
+      padding: 10px;
+      width: 300px;
+    }
+
+    .card-container img {
+      width: 150px;
+      border-radius: 8px;
     }
   </style>
 </head>
-
 <body class="day-mode">
 
   <header>
     <nav class="navbar">
       <a href="#home"><i class="fa fa-home"></i></a>
-      <a href="#achievements"><i class="fa fa-star"></i></a>
       <a href="#about"><i class="fa fa-user"></i></a>
+      <a href="#achievements"><i class="fa fa-star"></i></a>
       <button class="toggle-btn" onclick="toggleMode()" title="تبديل الوضع">
         <img id="mode-icon" src="sun.png" alt="الوضع النهاري">
       </button>
@@ -159,24 +141,14 @@
   </header>
 
   <section id="home">
-    <img src="sun.png" alt="صورة الطالب">
-    <i class="fa fa-star star star1"></i>
-    <i class="fa fa-star star star2"></i>
-    <i class="fa fa-star star star3"></i>
-    <h1>من أنا</h1>
-    <h2>أهلاً، اسمي أحمد وأحب الديناصورات! أتعلم البرمجة وأصنع مواقعي بنفسي.</h2>
-  </section>
-
-  <section id="achievements">
     <div class="content-box">
-      <h2>إنجازاتي</h2>
-      <ul style="list-style: none; padding: 0;">
-        <li>بنيت صفحة تعريفية رائعة.</li>
-        <li>تعلمت استخدام HTML و CSS.</li>
-        <li>شاركت في معرض التقنية بالمدرسة.</li>
-      </ul>
+      <img src="sun.png" alt="صورة الطالب" style="width: 180px; height: 180px; border-radius: 50%; border: 5px solid #ff69b4;">
+      <h2>من أنا</h2>
+      <p>أهلاً، اسمي أحمد وأحب الديناصورات! أتعلم البرمجة وأصنع مواقعي بنفسي.</p>
     </div>
   </section>
+
+  <hr>
 
   <section id="about">
     <div class="content-box">
@@ -184,6 +156,14 @@
       <p>الاسم: أحمد محمد</p>
       <p>الصف: السادس الابتدائي</p>
       <p>هواياتي: الديناصورات، كرة القدم، تعلم البرمجة.</p>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <div class="content-box">
+      <h2>إنجازاتي</h2>
+      <button onclick="addCard()">➕ أضف إنجازًا جديدًا</button>
+      <div id="cards-container"></div>
     </div>
   </section>
 
@@ -195,7 +175,6 @@
     function toggleMode() {
       const body = document.body;
       const icon = document.getElementById("mode-icon");
-
       if (body.classList.contains("day-mode")) {
         body.classList.remove("day-mode");
         body.classList.add("night-mode");
@@ -208,7 +187,90 @@
         icon.alt = "الوضع النهاري";
       }
     }
-  </script>
 
+    window.onload = function () {
+      const savedCards = JSON.parse(localStorage.getItem("cards")) || [];
+      savedCards.forEach(data => createCard(data.text, data.image));
+    };
+
+    function addCard() {
+      createCard("", "");
+    }
+
+    function createCard(textValue, imageDataURL) {
+      const container = document.getElementById("cards-container");
+
+      const cardContainer = document.createElement("div");
+      cardContainer.className = "card-container";
+
+      const inputText = document.createElement("textarea");
+      inputText.rows = 3; // يمكنك زيادة العدد لزيادة الارتفاع
+      inputText.style.resize = "vertical"; // لإمكانية تغيير الحجم من قبل المستخدم
+      inputText.placeholder = "اكتب وصف الإنجاز";
+      inputText.value = textValue;
+      inputText.disabled = true;
+
+      const inputImage = document.createElement("input");
+      inputImage.type = "file";
+      inputImage.accept = "image/*";
+
+      const imgPreview = document.createElement("img");
+      if (imageDataURL) {
+        imgPreview.src = imageDataURL;
+      }
+
+      const editBtn = document.createElement("button");
+      editBtn.textContent = "✏️ تعديل";
+      editBtn.onclick = () => {
+        inputText.disabled = !inputText.disabled;
+        editBtn.textContent = inputText.disabled ? "✏️ تعديل" : "✅ تم";
+        if (inputText.disabled) saveAllCards();
+      };
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "🗑️ حذف";
+      deleteBtn.onclick = () => {
+        cardContainer.remove();
+        saveAllCards();
+      };
+
+      inputText.addEventListener("input", saveAllCards);
+
+      inputImage.addEventListener("change", function () {
+        const file = this.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            imgPreview.src = e.target.result;
+            saveAllCards();
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      const textControls = document.createElement("div");
+      textControls.appendChild(inputText);
+      textControls.appendChild(inputImage);
+      textControls.appendChild(editBtn);
+      textControls.appendChild(deleteBtn);
+
+      cardContainer.appendChild(textControls);
+      cardContainer.appendChild(imgPreview);
+
+      container.appendChild(cardContainer);
+    }
+
+    function saveAllCards() {
+      const container = document.getElementById("cards-container");
+      const cardContainers = container.querySelectorAll(".card-container");
+      const data = [];
+      cardContainers.forEach(card => {
+        const text = card.querySelector("input[type='text']").value;
+        const img = card.querySelector("img").src;
+        data.push({ text, image: img });
+      });
+      localStorage.setItem("cards", JSON.stringify(data));
+    }
+  </script>
 </body>
 </html>
