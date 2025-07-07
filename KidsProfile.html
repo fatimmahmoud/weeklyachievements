@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>صفحتي المرحة</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Comic Neue', cursive;
+      margin: 0;
+      min-height: 100vh;
+      background-image: url('icon.png');
+      background-repeat: repeat;
+      background-size: 200px 200px;
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    /* الوضع النهاري */
+    .day-mode {
+      background-color: #fffbea;
+      color: #333;
+    }
+
+    /* الوضع الليلي */
+    .night-mode {
+      background-color: #1e1e2f;
+      color: #f0f0f0;
+    }
+
+    /* الهيدر */
+    header {
+      background: #ffc0cb;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+    }
+
+    header a {
+      color: white;
+      font-size: 1.8rem;
+      text-decoration: none;
+    }
+
+    header a:hover {
+      color: #ff69b4;
+    }
+
+    .toggle-btn {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .toggle-btn img {
+      width: 26px;
+      height: 26px;
+      transition: transform 0.3s;
+    }
+
+    .toggle-btn:hover img {
+      transform: rotate(15deg);
+    }
+
+    section {
+      padding: 100px 20px 60px;
+    }
+
+    #home {
+      position: relative;
+      text-align: center;
+    }
+
+    #home img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 5px solid #ff69b4;
+    }
+
+    .star {
+      position: absolute;
+      color: rgb(255, 234, 117);
+      font-size: 1.5rem;
+    }
+
+    .star1 { top: 30%; left: 57%; }
+    .star2 { top: 40%; left: 40%; }
+    .star3 { top: 55%; left: 56%; }
+
+    h2 {
+      color: #ff69b4;
+    }
+
+    /* صندوق المحتوى */
+    .content-box {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.85);
+      border: 2px solid #ff69b4;
+      border-radius: 12px;
+      text-align: center;
+      transition: background-color 0.5s;
+    }
+
+    /* محتوى ليلي */
+    .night-mode .content-box {
+      background-color: rgba(0, 0, 0, 0.4);
+      border-color: #ccc;
+    }
+
+    footer {
+      background: #ffc0cb;
+      padding: 10px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .night-mode footer {
+      background: #333;
+      color: #eee;
+    }
+
+    .night-mode h2 {
+      color: #ffd6f5;
+    }
+
+    .night-mode header {
+      background: #444;
+    }
+
+    .night-mode header a:hover {
+      color: #ffb3d1;
+    }
+  </style>
+</head>
+
+<body class="day-mode">
+
+  <header>
+    <nav class="navbar">
+      <a href="#home"><i class="fa fa-home"></i></a>
+      <a href="#achievements"><i class="fa fa-star"></i></a>
+      <a href="#about"><i class="fa fa-user"></i></a>
+      <button class="toggle-btn" onclick="toggleMode()" title="تبديل الوضع">
+        <img id="mode-icon" src="sun.png" alt="الوضع النهاري">
+      </button>
+    </nav>
+  </header>
+
+  <section id="home">
+    <img src="sun.png" alt="صورة الطالب">
+    <i class="fa fa-star star star1"></i>
+    <i class="fa fa-star star star2"></i>
+    <i class="fa fa-star star star3"></i>
+    <h1>من أنا</h1>
+    <h2>أهلاً، اسمي أحمد وأحب الديناصورات! أتعلم البرمجة وأصنع مواقعي بنفسي.</h2>
+  </section>
+
+  <section id="achievements">
+    <div class="content-box">
+      <h2>إنجازاتي</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li>بنيت صفحة تعريفية رائعة.</li>
+        <li>تعلمت استخدام HTML و CSS.</li>
+        <li>شاركت في معرض التقنية بالمدرسة.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="content-box">
+      <h2>معلوماتي الشخصية</h2>
+      <p>الاسم: أحمد محمد</p>
+      <p>الصف: السادس الابتدائي</p>
+      <p>هواياتي: الديناصورات، كرة القدم، تعلم البرمجة.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 جميع الحقوق محفوظة.
+  </footer>
+
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      const icon = document.getElementById("mode-icon");
+
+      if (body.classList.contains("day-mode")) {
+        body.classList.remove("day-mode");
+        body.classList.add("night-mode");
+        icon.src = "moon.png";
+        icon.alt = "الوضع الليلي";
+      } else {
+        body.classList.remove("night-mode");
+        body.classList.add("day-mode");
+        icon.src = "sun.png";
+        icon.alt = "الوضع النهاري";
+      }
+    }
+  </script>
+
+</body>
+</html>
