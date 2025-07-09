@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>صفحة إنجازاتي</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body class="day-mode">
+  <header>
+    <nav class="navbar">
+      <a href="#home"><img src="home.png" alt="الرئيسية" width="50" height="50"></a>
+      <a href="#about"><img src="user.png" alt="عنّي" width="50" height="50"></a>
+      <a href="#achievements"><img src="star.png" alt="إنجازاتي" width="50" height="50"></a>
+      <button class="toggle-btn" onclick="toggleMode()" title="تبديل الوضع">
+        <img id="mode-icon" src="sun.png" alt="الوضع النهاري">
+      </button>
+    </nav>
+  </header>
+
+  <section id="home">
+    <div class="content-box">
+      <img src="sun.png" alt="صورة الطالب" style="width: 180px; height: 180px; border-radius: 50%; border: 5px solid #ff69b4;">
+      <h2>من أنا</h2>
+      <p>أهلاً، اسمي لينا وأحب الرسم، أتعلم البرمجة وأصنع مواقعي بنفسي.</p>
+    </div>
+  </section>
+
+  <hr>
+
+  <section id="about">
+    <div class="content-box">
+      <h2>معلوماتي الشخصية</h2>
+      <p>الاسم: لينا محمد</p>
+      <p>الصف: السادس الابتدائي</p>
+      <p>هواياتي: الرسم، تعلم البرمجة.</p>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <div class="content-box">
+      <h2>إنجازاتي</h2>
+      <button onclick="addCard()">➕ أضف إنجازًا جديدًا</button>
+      <div id="cards-container"></div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 جميع الحقوق محفوظة.
+  </footer>
+</body>
+</html>
