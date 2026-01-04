@@ -2,6 +2,8 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
+  <!-- ✅ مهم جدًا للتجاوب مع الهاتف -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weekly Achievements</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -101,6 +103,7 @@
       background: rgba(255,255,255,0.25);
       text-align: left;
       direction: ltr;
+      box-sizing: border-box;
     }
     .night-mode .month-box {
       background: rgba(0,0,0,0.25);
@@ -112,6 +115,7 @@
       justify-content: space-between;
       align-items: baseline;
       margin-bottom: 20px;
+      gap: 10px;
     }
     .month-title h3 { margin:0; }
 
@@ -131,7 +135,7 @@
     .week-meta { font-size: 0.9rem; opacity: 0.85; margin-bottom: 10px; }
     .week-text p { margin: 0 0 12px; line-height: 1.6; }
 
-    /* معرض صور أفقي قابل للتمرير (بدون تكدس) */
+    /* ✅ معرض صور أفقي قابل للتمرير (بدون تكدس) */
     .week-gallery {
       display: flex;
       gap: 10px;
@@ -157,10 +161,11 @@
       object-fit: cover;
       flex: 0 0 auto;
       scroll-snap-align: start;
+      box-sizing: border-box;
     }
     .night-mode .week-gallery img { border-color: #ffd6f5; }
 
-    /* (اختياري) صورة مميزة أكبر على اليمين */
+    /* صورة مميزة أكبر على اليمين */
     .week-hero {
       width: 160px;
       height: 160px;
@@ -168,6 +173,7 @@
       border: 4px solid #ff69b4;
       object-fit: cover;
       flex-shrink: 0;
+      box-sizing: border-box;
     }
     .night-mode .week-hero { border-color: #ffd6f5; }
 
@@ -179,8 +185,57 @@
     }
     .night-mode footer { background:#333; }
 
-    /*  الإضافة: كلاس للإخفاء (للشهور/الأسابيع القادمة) */
+    /* ✅ الإخفاء (للشهور/الأسابيع القادمة + روابطها) */
     .hidden { display: none !important; }
+
+    /* =========================
+       ✅ Responsive (Mobile)
+       ========================= */
+    @media (max-width: 768px) {
+      section { padding: 90px 0 40px; }
+
+      .content-box { padding: 25px 15px; }
+
+      h1 { font-size: 1.6rem; }
+      h2 { font-size: 1.4rem; }
+      p  { font-size: 0.95rem; line-height: 1.6; }
+
+      /* صورة البروفايل */
+      #home img {
+        width: 180px !important;
+        height: 180px !important;
+      }
+
+      /* تصغير شريط التنقل */
+      .navbar { gap: 18px; }
+      header a { font-size: 1.4rem; }
+
+      /* صندوق الشهر داخل الشاشة */
+      .month-box {
+        width: 100%;
+        padding: 18px;
+        margin: 0 auto 30px;
+      }
+
+      /* الأسبوع يتحول عمودي (نص ثم صورة) */
+      .week-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .week-text { min-width: 0; }
+
+      .week-hero {
+        width: 100%;
+        height: auto;
+        max-height: 240px;
+      }
+
+      .week-gallery img {
+        width: 90px;
+        height: 90px;
+      }
+    }
   </style>
 </head>
 
@@ -203,8 +258,13 @@
     <img src="me.jpg"
       alt="My photo"
       style="width:250px;height:250px;border-radius:50%;border:5px solid #ff69b4;object-fit:cover;margin:0 auto;display:block;">
+
     <h1 style="color:#ffd6f5; margin-top:18px;">Teacher Fatima Abdul Hakim’s Portfolio</h1>
-    <p>Weekly documentation of my professional journey.</p>
+
+    <p>
+      Weekly documentation of my professional journey,<br>
+      from an English teacher at Happy Little Feet.
+    </p>
   </div>
 </section>
 
@@ -213,8 +273,15 @@
 <section id="about">
   <div class="content-box">
     <h2>About Me</h2>
-    <p>Name: Fatima Abdul Hakim</p>
-    <p>Focus: Teaching, documentation, and steady growth.</p>
+
+    <p>
+      Fatima Abdel Hakim, a kindergarten teacher currently teaching English.
+    </p>
+
+    <p>
+      Creative and multi-talented — I draw, write, and code a little.
+      I also love to sing, but my best friend says my singing voice is painfully off-key.
+    </p>
   </div>
 </section>
 
@@ -238,11 +305,11 @@
       </div>
 
       <!-- Week 1 -->
-      <div class="week-row" data-start="2026-01-04">
+      <div class="week-row" data-start="2026-01-03">
         <div class="week-text">
           <h4>Week 1</h4>
-          <div class="week-meta">Dates: …</div>
-          <p>Write your summary here…</p>
+          <div class="week-meta">Dates:from 4 to 8 Jan</div>
+          <p>my week was..</p>
 
           <div class="week-gallery">
             <img src="1.jpg" alt="W1 photo 1">
@@ -254,7 +321,7 @@
       </div>
 
       <!-- Week 2 -->
-      <div class="week-row" data-start="2026-01-11">
+      <div class="week-row" data-start="2026-01-15">
         <div class="week-text">
           <h4>Week 2</h4>
           <div class="week-meta">Dates: …</div>
@@ -269,7 +336,7 @@
       </div>
 
       <!-- Week 3 -->
-      <div class="week-row" data-start="2026-01-18">
+      <div class="week-row" data-start="2026-01-22">
         <div class="week-text">
           <h4>Week 3</h4>
           <div class="week-meta">Dates: …</div>
@@ -283,7 +350,7 @@
       </div>
 
       <!-- Week 4 -->
-      <div class="week-row" data-start="2026-01-25">
+      <div class="week-row" data-start="2026-01-29">
         <div class="week-text">
           <h4>Week 4</h4>
           <div class="week-meta">Dates: …</div>
@@ -307,7 +374,7 @@
         <p>February 2026</p>
       </div>
 
-      <div class="week-row" data-start="2026-02-01">
+      <div class="week-row" data-start="2026-02-05">
         <div class="week-text">
           <h4>Week 1</h4>
           <div class="week-meta">Dates: …</div>
@@ -319,7 +386,7 @@
         <img src="m2w1.jpg" class="week-hero" alt="M2 W1 hero">
       </div>
 
-      <div class="week-row" data-start="2026-02-08">
+      <div class="week-row" data-start="2026-02-12">
         <div class="week-text">
           <h4>Week 2</h4>
           <div class="week-meta">Dates: …</div>
@@ -331,7 +398,7 @@
         <img src="m2w2.jpg" class="week-hero" alt="M2 W2 hero">
       </div>
 
-      <div class="week-row" data-start="2026-02-15">
+      <div class="week-row" data-start="2026-02-19">
         <div class="week-text">
           <h4>Week 3</h4>
           <div class="week-meta">Dates: …</div>
@@ -343,7 +410,7 @@
         <img src="m2w3.jpg" class="week-hero" alt="M2 W3 hero">
       </div>
 
-      <div class="week-row" data-start="2026-02-22">
+      <div class="week-row" data-start="2026-02-26">
         <div class="week-text">
           <h4>Week 4</h4>
           <div class="week-meta">Dates: …</div>
@@ -363,7 +430,7 @@
         <p>March 2026</p>
       </div>
 
-      <div class="week-row" data-start="2026-03-01">
+      <div class="week-row" data-start="2026-03-05">
         <div class="week-text">
           <h4>Week 1</h4>
           <div class="week-meta">Dates: …</div>
@@ -375,7 +442,7 @@
         <img src="m3w1.jpg" class="week-hero" alt="M3 W1 hero">
       </div>
 
-      <div class="week-row" data-start="2026-03-08">
+      <div class="week-row" data-start="2026-03-12">
         <div class="week-text">
           <h4>Week 2</h4>
           <div class="week-meta">Dates: …</div>
@@ -387,7 +454,7 @@
         <img src="m3w2.jpg" class="week-hero" alt="M3 W2 hero">
       </div>
 
-      <div class="week-row" data-start="2026-03-15">
+      <div class="week-row" data-start="2026-03-19">
         <div class="week-text">
           <h4>Week 3</h4>
           <div class="week-meta">Dates: …</div>
@@ -399,7 +466,7 @@
         <img src="m3w3.jpg" class="week-hero" alt="M3 W3 hero">
       </div>
 
-      <div class="week-row" data-start="2026-03-22">
+      <div class="week-row" data-start="2026-03-26">
         <div class="week-text">
           <h4>Week 4</h4>
           <div class="week-meta">Dates: …</div>
@@ -418,7 +485,7 @@
 <footer>&copy; 2026</footer>
 
 <script>
-  //  يبدأ ليل، وعند الضغط يتحول لنهار
+  // ✅ يبدأ ليل، وعند الضغط يتحول لنهار
   function toggleMode() {
     const body = document.body;
     const icon = document.getElementById("mode-icon");
@@ -434,7 +501,7 @@
     }
   }
 
-  /*  إخفاء الشهور والأسابيع القادمة تلقائيًا */
+  /* ✅ إخفاء الشهور والأسابيع القادمة تلقائيًا */
   function hideFutureContent() {
     const today = new Date();
     today.setHours(0,0,0,0);
@@ -471,4 +538,3 @@
 
 </body>
 </html>
-
